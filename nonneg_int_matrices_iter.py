@@ -1,8 +1,20 @@
 def nonneg_int_vectors_iter(n, length, ceiling):
     r"""
-    Vectors of non negative integers
+    Vectors of nonnegative integers
     of prescribed `length` and sum `n`
     whose parts are bounded according to `ceiling`.
+
+    >>> iter = nonneg_int_vectors_iter(5, 3, [3, 1, 5])
+    >>> for v in iter:
+    ...     print(v)
+    [0, 0, 5]
+    [0, 1, 4]
+    [1, 0, 4]
+    [1, 1, 3]
+    [2, 0, 3]
+    [2, 1, 2]
+    [3, 0, 2]
+    [3, 1, 1]
     """
     assert length == len(ceiling)
 
@@ -17,21 +29,19 @@ def nonneg_int_vectors_iter(n, length, ceiling):
 
 def nonneg_int_matrices_iter(row_sums, col_sums):
     r"""
+    Matrices of nonnegative integers
+    with prescribed row and column sums.
 
-    EXAMPLES::
-
-        sage: iter = nonneg_int_matrices_iter([3,2,2], [2,5])
-        sage: for m in iter:
-        ....:   print(m)
-        [[2, 1], [0, 2], [0, 2]]
-        [[1, 2], [1, 1], [0, 2]]
-        [[1, 2], [0, 2], [1, 1]]
-        [[0, 3], [2, 0], [0, 2]]
-        [[0, 3], [1, 1], [1, 1]]
-        [[0, 3], [0, 2], [2, 0]]
-
+    >>> iter = nonneg_int_matrices_iter([3,2,2], [2,5])
+    >>> for m in iter:
+    ...     print(m)
+    [[0, 3], [0, 2], [2, 0]]
+    [[0, 3], [1, 1], [1, 1]]
+    [[0, 3], [2, 0], [0, 2]]
+    [[1, 2], [0, 2], [1, 1]]
+    [[1, 2], [1, 1], [0, 2]]
+    [[2, 1], [0, 2], [0, 2]]
     """
-
     if sum(row_sums) != sum(col_sums):
         return
 
