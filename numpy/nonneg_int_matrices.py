@@ -6,6 +6,7 @@ def nonneg_int_vectors_iter(n, ceiling):
     Vectors of nonnegative integers that sum to `n`
     whose parts are bounded according to `ceiling`.
 
+    >>> from nonneg_int_matrices import nonneg_int_vectors_iter
     >>> for v in nonneg_int_vectors_iter(5, [3, 1, 5]):
     ...     print(v)
     [0, 0, 5]
@@ -31,6 +32,7 @@ def nonneg_int_matrices_iter(row_sums, col_sums):
     r"""
     Matrices of nonnegative integers with prescribed row and column sums.
 
+    >>> from nonneg_int_matrices import nonneg_int_matrices_iter
     >>> for m in nonneg_int_matrices_iter([3,2,2], [2,5]):
     ...     print(m)
     [[0, 3], [0, 2], [2, 0]]
