@@ -19,8 +19,8 @@ def nonneg_int_vectors_iter(n, ceiling):
             yield [n]
     else:
         for first_entry in range(min(ceiling[0], n) + 1):
-            for vec in nonneg_int_vectors_iter(n - first_entry, ceiling[1:]):
-                yield [first_entry] + vec
+            for sub_vec in nonneg_int_vectors_iter(n - first_entry, ceiling[1:]):
+                yield [first_entry] + sub_vec
 
 
 def nonneg_int_matrices_iter(row_sums, col_sums):
