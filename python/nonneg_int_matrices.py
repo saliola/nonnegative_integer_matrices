@@ -55,3 +55,10 @@ def nonneg_int_matrices_iter(row_sums, col_sums):
             truncated_col_sums = [col_sums[i] - first_row[i] for i in range(len(col_sums))]
             for mat in nonneg_int_matrices_iter(truncated_row_sums, truncated_col_sums):
                 yield [first_row] + mat
+
+
+if __name__ == "__main__":
+    row_sums = [3, 1, 5]
+    col_sums = [5, 4]
+    for mat in nonneg_int_matrices_iter(row_sums, col_sums):
+        print(mat)
