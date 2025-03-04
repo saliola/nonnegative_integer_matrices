@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+// print an array
 void printArray(int* array, int length) {
     printf("[");
     for (int i = 0; i < length; i++) {
@@ -14,8 +16,10 @@ void printArray(int* array, int length) {
     printf("\n");
 }
 
+
+// copy an array
 int* copyArray(int* array, int length) {
-    int* newArray = (int*)malloc(length * sizeof(int));
+    int* newArray = (int*) malloc(length * sizeof(int));
 
     // check if memory allocation was successful
     if (newArray == NULL) {
@@ -31,8 +35,10 @@ int* copyArray(int* array, int length) {
     return newArray;
 }
 
-int* createFilledArray(int length, int fill_value) {
-    int* array = (int*)malloc(length * sizeof(int));
+
+// create an array of ints of the given length initialized with 0s
+int* createArray(int length) {
+    int* array = (int*) calloc(length, sizeof(int));
 
     // check if memory allocation was successful
     if (array == NULL) {
@@ -40,13 +46,9 @@ int* createFilledArray(int length, int fill_value) {
         return NULL;
     }
 
-    // set all entries to fill_value
-    for (int i = 0; i < length; i++) {
-        array[i] = fill_value;
-    }
-
     return array;
 }
+
 
 void go(int* composition, int length, int index, int sum, int n, int* maxValues) {
     // given a composition of length `length` whose parts sum to `sum`, and
@@ -81,7 +83,7 @@ void go(int* composition, int length, int index, int sum, int n, int* maxValues)
 int main () {
 
     int len = 4;
-    int* comp = createFilledArray(len, 0);
+    int* comp = createArray(len);
     int sum = 0;
     int ind = 0;
     int n = 5;
