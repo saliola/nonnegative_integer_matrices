@@ -5,4 +5,4 @@ clean:
 	rm -rf build
 	rm -rf __pycache__
 	rm -f nonneg_int_matrices.c
-	rm -f nonneg_int_matrices.cpython-311-darwin.so
+	rm -f nonneg_int_matrices.cpython-*-darwin.so
